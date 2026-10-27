@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LinguaLearn - Language Learning App</title>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="nav-brand">
+            <i class="fa-solid fa-earth-americas"></i>
+            <span>LinguaLearn</span>
+        </div>
+        <!-- Language Selector Dropdown -->
+        <div class="language-selector">
+            <label for="targetLanguage">Learning:</label>
+            <select id="targetLanguage">
+                <option value="spanish">🇪🇸 Spanish</option>
+                <option value="french">🇫🇷 French</option>
+                <option value="german">🇩🇪 German</option>
+            </select>
+        </div>
+    </nav>
+
+    <!-- MAIN CONTAINER -->
+    <main class="main-content">
+
+        <!-- DASHBOARD CATEGORIES -->
+        <section class="categories-section">
+            <h2>Explore Lessons</h2>
+            <div class="category-grid">
+                <div class="cat-card" data-category="vocabulary">
+                    <i class="fa-solid fa-book-open"></i>
+                    <h3>Vocabulary</h3>
+                    <p>Learn core words</p>
+                </div>
+                <div class="cat-card" data-category="phrases">
+                    <i class="fa-solid fa-comments"></i>
+                    <h3>Phrases</h3>
+                    <p>Everyday conversations</p>
+                </div>
+                <div class="cat-card" data-category="grammar">
+                    <i class="fa-solid fa-pencil"></i>
+                    <h3>Grammar</h3>
+                    <p>Rules & structures</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- FLASHCARD / LESSON SECTION -->
+        <section class="lesson-section" id="lessonSection" style="display: none;">
+            <div class="lesson-header">
+                <button class="btn btn-secondary" id="backToDashboard"><i class="fa-solid fa-arrow-left"></i> Back</button>
+                <h3 id="lessonTitle">Vocabulary</h3>
+            </div>
+            
+            <!-- Flashcard Card -->
+            <div class="flashcard" id="flashcard">
+                <div class="flashcard-inner">
+                    <div class="flashcard-front">
+                        <span class="word-hint">Word:</span>
+                        <h2 id="cardWord">Hola</h2>
+                        <p class="click-hint">Click to flip 🔄</p>
+                    </div>
+                    <div class="flashcard-back">
+                        <span class="word-hint">Meaning:</span>
+                        <h2 id="cardMeaning">Hello</h2>
+                        <p id="cardTranslation">Translation / Pronunciation details</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Flashcard Navigation Buttons -->
+            <div class="lesson-nav">
+                <button class="btn btn-primary" id="prevBtn">Previous</button>
+                <span id="cardCounter">1 / 5</span>
+                <button class="btn btn-primary" id="nextBtn">Next</button>
+            </div>
+        </section>
+
+        <!-- QUIZ SECTION -->
+        <section class="quiz-section">
+            <div class="quiz-header-box">
+                <h3><i class="fa-solid fa-graduation-cap"></i> Test Your Knowledge</h3>
+                <button class="btn btn-primary" id="startQuizBtn">Start Quiz</button>
+            </div>
+            <div class="quiz-box" id="quizBox" style="display: none;">
+                <h4 id="quizQuestion">Question text goes here?</h4>
+                <div class="quiz-options" id="quizOptions">
+                    <!-- Options injected via JS -->
+                </div>
+                <button class="btn btn-primary" id="nextQuizBtn" style="margin-top: 15px; display: none;">Next Question</button>
+            </div>
+            <div class="quiz-score-box" id="quizScoreBox" style="display: none;">
+                <h3>Quiz Completed! 🎉</h3>
+                <p>Your Score: <span id="finalScore">0</span> / <span id="totalQuestions">0</span></p>
+                <button class="btn btn-primary" id="restartQuizBtn">Try Again</button>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- JavaScript Link -->
+    <script src="app.js"></script>
+</body>
+</html>
